@@ -1,0 +1,4 @@
+pandas==2.1.2
+mysql-connector-python==8.2.0
+SQLAlchemy==2.0.22
+flet==0.10.3
