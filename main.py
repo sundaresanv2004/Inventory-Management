@@ -160,6 +160,5 @@ if __name__ == '__main__':
     database_checker()
     ft.app(
         target=main,
-        assets_dir=local_assets_path,
-        view=ft.AppView.WEB_BROWSER,
+        assets_dir=local_assets_path
     )
