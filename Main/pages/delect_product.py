@@ -17,6 +17,7 @@ def delete_product_page(page: ft.Page, index):
         display_products(page)
 
     alter = ft.AlertDialog(
+        modal=True,
         title=ft.Text("Make Sure!"),
         content=ft.Text("This product will be deleted forever."),
         actions=[

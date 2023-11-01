@@ -3,7 +3,7 @@ import flet as ft
 from Main.service.connection.mysql_connection import display_sales, display_product_by_id
 
 table = ft.DataTable(
-    column_spacing=50,
+    column_spacing=20,
     columns=[
         ft.DataColumn(ft.Text("Sales ID")),
         ft.DataColumn(ft.Text("Product ID")),
@@ -11,7 +11,6 @@ table = ft.DataTable(
         ft.DataColumn(ft.Text("Product Category")),
         ft.DataColumn(ft.Text("Date")),
         ft.DataColumn(ft.Text("Total Amount")),
-
     ]
 )
 
@@ -30,12 +29,12 @@ def sales_page(page: ft.Page, main_colum: ft.Column):
             [
                 table
             ],
+            expand=True,
             scroll=ft.ScrollMode.ADAPTIVE,
         )
     ]
 
     page.on_resize = page_resize
-
     page.splash = None
     page.update()
     display_sale(page)

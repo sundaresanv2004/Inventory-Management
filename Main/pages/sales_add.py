@@ -27,7 +27,7 @@ def sales_product(page: ft.Page):
 
     def save(e):
         if int(quantity_entry.value) > 0:
-            quantity_entry.error_text = "Quantity is 0!"
+            quantity_entry.error_text = None
             quantity_entry.update()
             a = display_product_by_name(name_dropdown.value).values[0]
             save_sales([int(a[0]),
@@ -80,12 +80,12 @@ def sales_product(page: ft.Page):
     def change_quantity(e):
         df1 = display_product_by_name(name_dropdown.value)
 
-        if quantity_entry.value == '0':
+        if int(quantity_entry.value) < 1:
             minus.disabled = True
         else:
             minus.disabled = False
 
-        if int(quantity_entry.value) > int(df1.values[0][3]):
+        if int(quantity_entry.value) > int(df1.values[0][3]) or 0 == int(df1.values[0][3]):
             quantity_entry.value = str(df1.values[0][3])
             plus.disabled = True
         else:
@@ -96,7 +96,6 @@ def sales_product(page: ft.Page):
         page.update()
 
     def minus_click(e):
-
         quantity_entry.value = str(int(quantity_entry.value) - 1)
         page.update()
         change_quantity(e)
@@ -147,6 +146,7 @@ def sales_product(page: ft.Page):
     )
 
     alter = ft.AlertDialog(
+        modal=True,
         content=ft.Column(
             [
                 ft.Row(

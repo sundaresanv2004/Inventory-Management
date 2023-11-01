@@ -18,7 +18,6 @@ def product_page(page: ft.Page, main_column: ft.Column):
             scroll=ft.ScrollMode.ADAPTIVE
         )
     ]
-
     page.splash = None
     page.update()
     display_products(page)
@@ -75,7 +74,7 @@ class Records(ft.UserControl):
         )
 
         def on_hover_(e):
-            image.scale = 1.8 if e.data == "true" else 1.0
+            image.scale = 1.5 if e.data == "true" else 1.0
             image.height = 145 if e.data == "true" else 140
             image.update()
             e.control.scale = 1.1 if e.data == "true" else 1.0
@@ -131,7 +130,7 @@ class Records(ft.UserControl):
                 height=350,
                 alignment=ft.MainAxisAlignment.START,
             ),
-            margin=ft.margin.only(left=10, top=10),
+            margin=ft.margin.only(left=20, top=10),
             padding=ft.padding.only(left=10, right=10, bottom=10),
             on_hover=on_hover_,
             animate_scale=ft.animation.Animation(600, ft.AnimationCurve.EASE),

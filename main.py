@@ -36,7 +36,7 @@ def main(page: ft.Page):
     )
 
     def on_option_click(e):
-        page.splash = ft.ProgressBar(color=ft.colors.GREEN_800)
+        page.splash = ft.ProgressBar()
         global old_data
 
         if e != 5:
@@ -76,21 +76,18 @@ def main(page: ft.Page):
     home = ft.TextButton(
         text='Home',
         data=0,
-        icon_color=ft.colors.GREEN_ACCENT_400,
         on_click=lambda e: on_option_click(e.control.data)
     )
 
     product = ft.TextButton(
         text="Products",
         data=1,
-        icon_color=ft.colors.GREEN_ACCENT_400,
         on_click=lambda e: on_option_click(e.control.data),
     )
 
     sales = ft.TextButton(
         text="Sale",
         data=2,
-        icon_color=ft.colors.GREEN_ACCENT_400,
         on_click=lambda e: on_option_click(e.control.data)
     )
 
@@ -164,4 +161,5 @@ if __name__ == '__main__':
     ft.app(
         target=main,
         assets_dir=local_assets_path,
+        view=ft.AppView.WEB_BROWSER,
     )
