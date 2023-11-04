@@ -146,7 +146,7 @@ def main(page: ft.Page):
         )
     )
 
-    page.add(container)
+    page.add(ft.SafeArea(container))
     page.update()
     on_option_click(0)
 
