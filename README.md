@@ -6,6 +6,8 @@ Inventory management for a grocery shop involves overseeing and controlling the 
 
 Welcome to the Grocery Shop Inventory Management system. This project allows you to efficiently manage your grocery shop's inventory. The system consists of a frontend built using FlatLib in Python and a backend using MySQL.
 
+![Product Output](https://github.com/sundaresanv2004/Inventory-Management/blob/main/Main/assets/product1.png)
+
 ### Installation
 
 To install the required libraries, follow these steps:
